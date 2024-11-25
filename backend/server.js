@@ -12,7 +12,7 @@ const app = express();
 
 const PORT = process.env.PORT || 5001;
 
-const __dirname = path.resolve()
+const __dirname = path.resolve();
 
 app.use(express.json({limit: "10mb"}));
 app.use(cookieParser());
@@ -31,7 +31,6 @@ if (process.env.NODE_ENV === "production") {
 		res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
 	});
 }
-
 app.listen(PORT, () => {
   console.log("Server is running on http://localhost:" + PORT);
   connectDB();
